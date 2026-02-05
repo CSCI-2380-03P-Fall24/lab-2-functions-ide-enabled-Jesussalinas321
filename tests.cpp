@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#include "FunctionsLab.cpp"
+#include "FunctionsLab.cpp" 
 
 TEST_CASE("locateSmallest") {
 	int myarray[] = { 16,3,75,40,21,40,44,52,40,90,22 };
