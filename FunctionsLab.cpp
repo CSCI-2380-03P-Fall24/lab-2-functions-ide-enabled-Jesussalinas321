@@ -10,8 +10,14 @@ using namespace std; // making life easier so that we do not need to use std::ci
 // Note that I don't want the smallest value
 
 
-int locateSmallest(int array[], int start, int end){
-	return -1; // fix this!
+int locateSmallest(int arr[], int start, int end) {
+    int minIndex = start;
+    for (int i = start + 1; i <= end; i++) {
+        if (arr[i] < arr[minIndex]) {
+            minIndex = i;
+        }
+    }
+    return minIndex;
 }
 
 //Write the function called replaceVariable in the given interval such that 
@@ -20,8 +26,11 @@ int locateSmallest(int array[], int start, int end){
 //     an int which is the starting index of search,
 //     an int which is the ending point of searchspace
 // function: Search in the array from given start to end index and replace the given target value with 1000
-void replaceVariable() {
-	return;
+void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 
 
@@ -29,17 +38,13 @@ void replaceVariable() {
 //write a function called printArray to print out the elements of the given array
 //output: nothing
 //input: the array of integers and its size
-void printArray() {
-	return;
+void replaceVariable(int arr[], int target, int start, int end) {
+    for (int i = start; i <= end; i++) {
+        if (arr[i] == target) {
+            arr[i] = 1000;
+        }
+    }
 }
-
-
-
-
-
-
-
-
 //Write a function called sumOdds in the given interval such that 
 // output : integer
 // input : an array of int, the starting index of search, the ending point of searchspace
@@ -48,6 +53,12 @@ void printArray() {
 //     n%m gives you the remainder after dividing n to m. for example 7%3 = 1 because 7 = 3*2 + 1, then 1 is the remainder.
 
 
-int sumOdds(int array[], int start, int end){
-	return -1;
+int sumOdds(int arr[], int start, int end) {
+    int sum = 0;
+    for (int i = start; i <= end; i++) {
+        if (arr[i] % 2 != 0) {
+            sum += arr[i];
+        }
+    }
+    return sum;
 }
